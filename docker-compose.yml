@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8069:8069"
+    volumes:
+      - ./odoo-web-data:/var/lib/odoo
+      - ./src:/mnt/extra-addons
+      - ./config:/etc/odoo
+    depends_on:
+      - db
+    environment:
+      - HOST=db
+      - USER=odoo
+      - PASSWORD=odoo
+      - ODOO_MASTER_PASSWORD=master_password
+    command: odoo -d test_db --addons-path=/mnt/extra-addons -i lj_med_delivery --test-enable
+
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=test_db
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+    volumes:
+      - ./odoo-db-data:/var/lib/postgresql/data
+
