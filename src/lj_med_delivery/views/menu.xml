@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_lj_med_delivery_root"
+              name="Medical Delivery"
+              sequence="100"/>
+
+    <record id="action_lj_med_delivery_task" model="ir.actions.act_window">
+        <field name="name">Delivery Tasks</field>
+        <field name="res_model">lj_med_delivery.task</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your medical delivery task
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_lj_med_delivery_task"
+              name="All Tasks"
+              parent="menu_lj_med_delivery_root"
+              action="action_lj_med_delivery_task"
+              sequence="1"/>
+
+    <menuitem id="menu_lj_med_delivery_task_status"
+              name="Task Statuses"
+              parent="menu_lj_med_delivery_root"
+              action="action_lj_med_delivery_task_status"
+              sequence="20"/>
+</odoo>

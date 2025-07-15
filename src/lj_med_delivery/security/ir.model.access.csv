@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_lj_med_delivery_task_user,lj_med_delivery.task.user,model_lj_med_delivery_task,,1,1,1,1
+access_lj_med_delivery_task_status_user,lj_med_delivery.task_status.user,model_lj_med_delivery_task_status,,1,1,1,1

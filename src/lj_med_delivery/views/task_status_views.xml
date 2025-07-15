@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_lj_med_delivery_task_status_form" model="ir.ui.view">
+        <field name="name">lj.med.delivery.task.status.form</field>
+        <field name="model">lj_med_delivery.task_status</field>
+        <field name="arch" type="xml">
+            <form string="Task Status">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="sequence"/>
+                        <field name="color" widget="color_picker"/>
+                    </group>
+                    <field name="description"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_lj_med_delivery_task_status_tree" model="ir.ui.view">
+        <field name="name">lj.med.delivery.task.status.tree</field>
+        <field name="model">lj_med_delivery.task_status</field>
+        <field name="arch" type="xml">
+            <tree string="Task Statuses">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="color" widget="color_picker"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_lj_med_delivery_task_status" model="ir.actions.act_window">
+        <field name="name">Delivery Task Statuses</field>
+        <field name="res_model">lj_med_delivery.task_status</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

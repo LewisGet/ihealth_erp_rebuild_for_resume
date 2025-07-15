@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="seq_lj_med_delivery_task" model="ir.sequence">
+            <field name="name">Delivery Task Sequence</field>
+            <field name="code">lj_med_delivery.task.sequence</field>
+            <field name="prefix">DELI</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_lj_med_delivery_task_form" model="ir.ui.view">
+        <field name="name">lj.med.delivery.task.form</field>
+        <field name="model">lj_med_delivery.task</field>
+        <field name="arch" type="xml">
+            <form string="Delivery Task">
+                <sheet>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <group>
+                        <field name="partner_id"/>
+                        <field name="sale_order_id"/>
+                        <field name="employee_id"/>
+                        <field name="status_id"/>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_lj_med_delivery_task_tree" model="ir.ui.view">
+        <field name="name">lj.med.delivery.task.tree</field>
+        <field name="model">lj_med_delivery.task</field>
+        <field name="arch" type="xml">
+            <tree string="Delivery Tasks" sample="1">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="sale_order_id"/>
+                <field name="employee_id"/>
+                <field name="status_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_lj_med_delivery_task_search" model="ir.ui.view">
+        <field name="name">lj.med.delivery.task.search</field>
+        <field name="model">lj_med_delivery.task</field>
+        <field name="arch" type="xml">
+            <search string="Delivery Tasks">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="sale_order_id"/>
+                <field name="employee_id"/>
+                <field name="status_id"/>
+                <group expand="0" string="Group By">
+                    <filter string="Status" name="group_by_status" context="{'group_by': 'status_id'}"/>
+                    <filter string="Assigned Employee" name="group_by_employee" context="{'group_by': 'employee_id'}"/>
+                    <filter string="Customer" name="group_by_partner" context="{'group_by': 'partner_id'}"/>
+                    <filter string="Sale Order" name="group_by_sale_order" context="{'group_by': 'sale_order_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>
